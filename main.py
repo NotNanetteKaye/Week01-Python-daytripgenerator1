@@ -1,17 +1,37 @@
 import random
-import string
-destinations = ["Manila, Philippines", "Bogota, Columbia", "Barcelona, Spain", "Cancun, Mexico", "Los Angeles, California", "Australia"]
-restaurants = ["Italian food", "Seafood", "Steakhouse", "Mediterreanean", "Vegeterian"]
-mode_of_transportation = ["car", "plane", "train", "walk", "cruise"]
-entertainment = ["beach", "hike", "bike", "club", "concerts", "art museums", "shopping"]
+from unittest import result
 
-random_destination = random.choice(destinations)
-# print(random_destination)
-destination_input = string(input(f"Welcome to Day Trip Generator! If you are not sure what you want to do for your vacation, you have come to the right place! We chose {random_destination} for your destination! Does that sound good? Enter y/n:"))
-# print(destination_input)
+destinations_list = ["Manila, Philippines", "Bogota, Columbia", "Barcelona, Spain", "Cancun, Mexico", "Los Angeles, California", "Australia"]
+restaurants_list = ["Italian food", "Seafood", "Steakhouse", "Mediterreanean", "Vegeterian"]
+mode_of_transportations = ["car", "plane", "train", "walk", "cruise"]
+entertainments = ["beach", "hike", "bike", "club", "concerts", "art museums", "shopping"]
 
-for characters in destination_input:
-    if characters == "y":
-        print("yay!")
-    else:
-        print(string(input(f"Hmm let's try something else! How about {random_destination}?")))
+
+def random_item_picker(list):
+    random_item = random.choice(list)
+    return random_item
+
+
+def destination_choice_confirmation():
+    random_destination = random_item_picker(destinations_list)
+    user_input = input(f"Welcome to Day Trip Generator! To begin let's choose a place. How does {random_destination} sound? Enter y/n: ")
+    if user_input == "y":
+        print("Yay, you have chosen a destination! Next let's think food. How does ")
+        return random_destination
+    elif user_input == "n":
+        return destination_choice_confirmation()
+
+confirmed_destination = destination_choice_confirmation()
+# print(confirmed_destination)
+
+
+
+
+
+# restaurant_choice = random_item_picker(restaurants_list)
+# print(restaurant_choice)
+
+
+
+
+# input(f"Welcome to Day Trip Generator to plan your ideal vacation! To begin, let's choose a location. How does {destination} sound? Enter y/n: ")
