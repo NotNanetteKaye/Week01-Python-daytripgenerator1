@@ -2,7 +2,7 @@ import random
 from unittest import result
 
 destinations_list = ["Manila, Philippines", "Bogota, Columbia", "Barcelona, Spain", "Cancun, Mexico", "Los Angeles, California", "Australia"]
-restaurants_list = ["Italian food", "Seafood", "Steakhouse", "Mediterreanean", "Vegeterian"]
+restaurants_list = ["Italian food", "Seafood", "Steakhouse food", "Filipino food", "Mediterreanean food", "Vegeterian food"]
 mode_of_transportations_list = ["car", "plane", "train", "walking", "cruise"]
 entertainments_list = ["go to the beach", "go hike", "go biking", "go to clubs", "go to concerts", "go to art museums", "go shopping"]
 
@@ -22,7 +22,6 @@ def destination_choice_confirmation():
         return destination_choice_confirmation()
 
 confirmed_destination = destination_choice_confirmation()
-# print(confirmed_destination)
 
 def restaurant_choice_confirmation():
     user_confirmed = False
@@ -66,6 +65,6 @@ confirmed_entertainment = entertainment_choice_confirmation()
 
 confirming_details = input(f"Sweet we have generated your day trip! Now let's confirm the details. The trip generated is destination: {confirmed_destination}, restaurant: {confirmed_restaurant}, transportation: {confirmed_transportation}, and entertainment: {confirmed_entertainment}. Does everything look correct? Enter y/n:")
 if confirming_details == "y":
-    print(f"Yay! So it looks like you will be going to {confirmed_destination}! You will eat {confirmed_restaurant}. You will travel by {confirmed_transportation}. For fun, you will {confirmed_entertainment} ")
+    print(f"Yay! So it looks like you will be going to {confirmed_destination}! You will eat {confirmed_restaurant}. You will travel by {confirmed_transportation}. For fun, you will {confirmed_entertainment}. Sounds like the dream vacation to me!")
 else:
     print("Uh oh! Looks like we will have to start over.")
